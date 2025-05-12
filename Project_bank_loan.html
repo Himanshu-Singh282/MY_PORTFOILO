@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Data Analysis Project</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .section {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    video {
+      width: 100%;
+      max-height: 400px;
+      border-radius: 10px;
+    }
+
+    .carousel {
+      position: relative;
+      max-width: 100%;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: none;
+    }
+
+    .carousel img.active {
+      display: block;
+    }
+
+    .carousel-controls {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .carousel-controls button {
+      padding: 8px 16px;
+      margin: 0 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Data Analysis Project on BANK LOANS</h1>
+
+  <!-- Project Description Section -->
+  <div class="section">
+    <h2>About This Project</h2>
+    <p>
+      <h3>BANK LOAN REPORT - PROJECT OVERVIEW</h3>
+      The Bank Loan Report is a dynamic, data-driven analytical solution designed to provide end-to-end visibility into the bank’s loan performance. The report is divided into three integrated dashboards: Summary, Overview, and Details — each tailored to support strategic decision-making through interactive visuals and key financial metrics.
+    </p>
+    <p>
+      <h3>DASHBOARD 1: SUMMARY</h3>
+      The Summary Dashboard acts as the central performance monitor for all loan activities. It provides a consolidated view of critical Key Performance Indicators (KPIs) that reflect the financial health and operational trends in the loan portfolio. Metrics such as Total Loan Applications, Total Funded Amount, Total Amount Received, Average Interest Rate, and Average Debt-to-Income Ratio (DTI) are tracked alongside Month-to-Date (MTD) and Month-over-Month (MoM) trends to capture real-time progress.
+
+       This dashboard also segregates loans into Good Loans (Fully Paid, Current) and Bad Loans (Charged Off), offering percentages and value breakdowns for each. Detailed donut charts and KPI boxes help distinguish performance, allowing stakeholders to assess loan quality instantly. A lower panel further breaks down metrics by loan status, showing variations in applications, funding, collections, interest rates, and DTI ratios across Fully Paid, Charged Off, and Current loans.
+    </p>
+    <p>
+      <h3>DASHBOARD 2: OVERVIEW</h3>
+      The Overview Dashboard translates raw data into rich visual insights through an array of targeted charts:</br>
+      * A Monthly Trends Line Chart plots Total Applications, Funded Amount, and Amount Received over time, identifying seasonality and long-term lending behavior.</br>
+
+      * A State-wise Filled Map highlights regional performance disparities in loan issuance and repayments.</br>
+
+      * A Donut Chart dissects loan distribution by term length, offering insight into borrower preferences.</br>
+
+      * Bar Charts explore how employment length and loan purpose impact loan volume and funding behavior.</br>
+
+      * A Tree Map categorizes data by home ownership status, adding another demographic layer to the analysis.</br>
+
+These visuals enhance strategic oversight, regional planning, and demographic targeting.
+      
+    </p>
+    <p>
+      <h3>DASHBOARD 3: DETAILS</h3>
+      The Details Dashboard serves as a deep-dive portal for granular data exploration. It integrates loan-level details, borrower profiles, and segmented financial metrics. This dashboard enables users to filter, compare, and export data across categories — supporting audit reviews, operational assessments, and targeted lending strategies.</br>
+
+      Together, these dashboards form a complete intelligence suite to drive precision lending.
+    </p>
+
+  </div>
+
+  <!-- Embedded Video Section -->
+  <div class="section">
+    <h2>DhashBoards View</h2>
+    <video controls>
+      <source src="video project .mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Static Screenshot Carousel -->
+  <div class="section">
+    <h2>Dashboard Screenshots</h2>
+    <div class="carousel" id="carousel">
+      <img src="1st.png" class="active" alt="Dashboard 1">
+      <img src="overview.png" alt="Dashboard 2">
+      <img src="dat.png" alt="Dashboard 3">
+      <img src="summary.png" alt="Dashboard 3">
+
+    </div>
+    <div class="carousel-controls">
+      <button onclick="prevSlide()"> Prev</button>
+      <button onclick="nextSlide()"> Next</button>
+    </div>
+  </div>
+<!--⏮️ ⏭️-->
+  <script>
+    let currentSlide = 0;
+    const images = document.querySelectorAll('#carousel img');
+
+    function showSlide(index) {
+      images.forEach((img, i) => {
+        img.classList.toggle('active', i === index);
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % images.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + images.length) % images.length;
+      showSlide(currentSlide);
+    }
+  </script>
+
+</body>
+</html>
